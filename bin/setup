@@ -20,22 +20,22 @@ mkdir -p .git/safe
 # if [ -z "$CI" ]; then
 # fi
 
-if heroku join --app rail-yard-staging > /dev/null 2>&1; then
-  git remote add staging git@heroku.com:rail-yard-staging.git || true
-  printf 'You are a collaborator on the "rail-yard-staging" Heroku app
+if heroku join --app rail_yard-staging > /dev/null 2>&1; then
+  git remote add staging git@heroku.com:rail_yard-staging.git || true
+  printf 'You are a collaborator on the "rail_yard-staging" Heroku app
 '
 else
-  printf 'Ask for access to the "rail-yard-staging" Heroku app
+  printf 'Ask for access to the "rail_yard-staging" Heroku app
 '
 fi
 
 
-if heroku join --app rail-yard-production > /dev/null 2>&1; then
-  git remote add production git@heroku.com:rail-yard-production.git || true
-  printf 'You are a collaborator on the "rail-yard-production" Heroku app
+if heroku join --app rail_yard-production > /dev/null 2>&1; then
+  git remote add production git@heroku.com:rail_yard-production.git || true
+  printf 'You are a collaborator on the "rail_yard-production" Heroku app
 '
 else
-  printf 'Ask for access to the "rail-yard-production" Heroku app
+  printf 'Ask for access to the "rail_yard-production" Heroku app
 '
 fi
 

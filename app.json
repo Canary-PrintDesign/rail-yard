@@ -1,5 +1,5 @@
 {
-  "name":"rail-yard",
+  "name":"rail_yard",
   "scripts":{},
   "env":{
     "APPLICATION_HOST":{

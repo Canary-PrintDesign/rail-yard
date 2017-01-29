@@ -1,6 +1,6 @@
 development: &default
   adapter: postgresql
-  database: rail-yard_development
+  database: rail_yard_development
   encoding: utf8
   min_messages: warning
   pool: <%= Integer(ENV.fetch("DB_POOL", 5)) %>
@@ -9,7 +9,7 @@ development: &default
 
 test:
   <<: *default
-  database: rail-yard_test
+  database: rail_yard_test
 
 production: &deploy
   encoding: utf8

@@ -1,4 +1,4 @@
-# Rail-yard
+# Rail Yard
 
 ## Getting Started
 
