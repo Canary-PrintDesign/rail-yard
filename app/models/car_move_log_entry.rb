@@ -1,0 +1,2 @@
+class CarMoveLogEntry < ApplicationRecord
+end
