@@ -22,6 +22,7 @@ gem "sprockets", ">= 3.0.0"
 gem "suspenders"
 gem "title"
 gem "uglifier"
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
 group :development do
   gem "listen"
