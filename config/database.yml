@@ -11,11 +11,15 @@ test:
   <<: *default
   database: rail_yard_test
 
-production: &deploy
+production:
+  <<: *default
+  database: rail_yard_production
   encoding: utf8
   min_messages: warning
   pool: <%= [Integer(ENV.fetch("MAX_THREADS", 5)), Integer(ENV.fetch("DB_POOL", 5))].max %>
   timeout: 5000
   url:  <%= ENV.fetch("DATABASE_URL", "") %>
 
-staging: *deploy
+staging:
+  <<: *default
+  database: rail_yard_staging
