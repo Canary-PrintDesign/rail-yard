@@ -2,6 +2,8 @@ source "https://rubygems.org"
 
 ruby "2.4.0"
 
+gem "dotenv-rails"
+
 gem "autoprefixer-rails"
 gem "delayed_job_active_record"
 gem "flutie"
@@ -32,7 +34,6 @@ group :development, :test do
   gem "awesome_print"
   gem "bullet"
   gem "bundler-audit", ">= 0.5.0", require: false
-  gem "dotenv-rails"
   gem "factory_girl_rails"
   gem "pry-byebug"
   gem "pry-rails"
