@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170129225852) do
+ActiveRecord::Schema.define(version: 20170130000110) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,16 @@ ActiveRecord::Schema.define(version: 20170129225852) do
     t.integer  "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "railcar_id"
+    t.index ["railcar_id"], name: "index_car_move_log_entries_on_railcar_id", using: :btree
   end
 
   create_table "car_temp_log_entries", force: :cascade do |t|
     t.integer  "degrees"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "railcar_id"
+    t.index ["railcar_id"], name: "index_car_temp_log_entries_on_railcar_id", using: :btree
   end
 
   create_table "railcars", force: :cascade do |t|
@@ -35,4 +39,6 @@ ActiveRecord::Schema.define(version: 20170129225852) do
     t.boolean  "in_yard"
   end
 
+  add_foreign_key "car_move_log_entries", "railcars"
+  add_foreign_key "car_temp_log_entries", "railcars"
 end

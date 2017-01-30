@@ -1,2 +1,3 @@
-class TemperatureLogEntry < ApplicationRecord
+class CarTempLogEntry < ApplicationRecord
+  belongs_to :railcar
 end
