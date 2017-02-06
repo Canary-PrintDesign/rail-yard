@@ -1,7 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+5.times.map do |i|
+  railcar = Railcar.create({
+    number: "PLOX 907#{i}",
+    in_yard: true
+  })
+  CarMoveLogEntry.create({
+    railcar: railcar,
+    arriving: true,
+    position: i
+  })
+  (6.hours.ago.to_i .. DateTime.current.to_i).step(1.hour) do |date|
+    CarTempLogEntry.create({
+      railcar: railcar,
+      degrees: rand(200..300)
+    }).update({created_at: DateTime.strptime(date.to_s, '%s')})
+  end
+end
