@@ -23,6 +23,8 @@ gem "suspenders"
 gem "title"
 gem "uglifier"
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'chartkick'
+gem 'groupdate'
 
 group :development do
   gem "listen"
